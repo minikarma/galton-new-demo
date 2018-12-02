@@ -68,7 +68,6 @@ var modesList = d3.select("#modes"),
   slider = d3.select("#slider").property("value", c.time)
     .on("input", () => {
     c.time = document.getElementById("slider").value;
-    console.log(c.time);
     sliderValue.text(c.time + " mins");
     getGalton(c.ll, c.mode, c.city, c.time)
   });
@@ -80,7 +79,7 @@ var modesList = d3.select("#modes"),
 locationBtn.on("click", function() {
   progress.style("display", "block");
   navigator.geolocation.getCurrentPosition(function(position) {
-    console.log([position.coords.longitude, position.coords.latitude]);
+    //console.log([position.coords.longitude, position.coords.latitude]);
     setParam("ll", [position.coords.longitude, position.coords.latitude]);
 
     //what if the location far away from city, looking for nearest city
@@ -411,16 +410,8 @@ getGalton = (coords, mode, city, time) => {
     //}
 
     map.getSource("isochrones").setData(data);
-
     console.timeEnd('request');
-    // if(mode === "masstransit") {
-    //   map.getSource("isochrones-otp").setData(data);
-    //   map.getSource("isochrones").setData({ type: "FeatureCollection", features: [] });
-    // } else {
-    //   map.getSource("isochrones").setData(data);
-    //   map.getSource("isochrones-otp").setData({ type: "FeatureCollection", features: [] });
-    // }
-    console.log(data);
+    //console.log(data);
     progress.style("display", "none");
 
     //      var stationsWithin = turf.within(stations, data);
