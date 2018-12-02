@@ -1,0 +1,122 @@
+* { font-family: 'Open Sans', sans-serif, Helvetica; }
+a, a:visited { color: #09e; text-decoration: none; }
+a:hover { color: #e33; }
+#hello { line-height: 52px; color: #333; font-size: 48px; margin-top: 180px; }
+#location-btn div { opacity: .85; background: url('location.svg') center center no-repeat; width: 40px; height: 40px; }
+#location-btn div:hover { opacity: 1; }
+#map { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; }
+#title { color: #333; font-size: 36px; margin-bottom: 8px; }
+#mobile-btn { display: none; position: absolute; top: 12px; left: 12px; width: 40px; height: 40px; max-height: 40px; line-height: 40px; font-size: 24px; border-radius: 20px; text-align: center; background: #09e; color: #eee; box-shadow: 0px 7px 30px -8px rgba(0,0,0,1); z-index: 800; cursor: pointer;}
+#mobile-btn:hover, #mobile-btn:active { background: #0af; color: #fff; box-shadow: 0px 7px 30px -8px rgba(0,0,0,1) }
+#location-btn { display: block; position: absolute; bottom: 22px; right: 12px; width: 40px; height: 40px; max-height: 40px; line-height: 40px; font-size: 24px; border-radius: 20px; text-align: center; background: #09e; color: #eee; box-shadow: 0px 1px 3px 3px rgba(0,0,0,0.15); z-index: 800; cursor: pointer;}
+#location-btn:hover, #mobile-btn:active { background: #0af; color: #fff; box-shadow: 0px 7px 30px -8px rgba(0,0,0,1) }
+#close-btn { background: url('./close-btn.svg') center center no-repeat; display: none; opacity: 0.8; float: right; width: 24px; height: 24px; line-height: 24px; cursor: pointer; }
+#close-btn:hover  { opacity: 1; }
+#stats { display: none; padding: 20px; font-size: 24px; position: absolute; background: #fff; box-shadow: 0px 1px 3px 3px rgba(0,0,0,0.2); top: 12px; left: 12px; z-index: 900; }
+#modes { line-height: 28px; padding: 6px 12px; display: block; font-size: 13px; position: absolute; background: #fff;
+	box-shadow: 0px 15px 50px -10px rgba(0,0,0,0.4);
+	top: 12px; right: 12px; z-index: 800; }
+.mode, .mode-selected { padding: 6px; display: inline-block; cursor: pointer;}
+.mode { color: #09e; font-weight: 300;  }
+.mode:hover { color: #0af; }
+.mode-selected { color: #333; font-weight: 400; }
+
+.lang-ru, .lang-en { display: none; }
+.lang, .lang-selected { cursor: pointer; display: inline-block; font-size: 12px; }
+
+#startBtnLine { text-align: center; }
+#startBtn { max-width: 100; display: inline-block; padding: 12px 18px; font-size: 18px; background: #09e; color: #fff; box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.05); cursor: pointer; }
+#startBtn:hover { background: #0af; }
+
+#content { border-top: 1px solid rgba(220,220,220,0.5); overflow-y: auto; }
+#cities, #about { margin-top: 12px; }
+
+.city, .city-selected { line-height: 24px; }
+
+.city { color: red; font-weight: 300; color: #09e; cursor: pointer; }
+.city:hover  span { color: #f00; cursor: pointer; }
+.city-selected  { font-weight: 400; color: #333; cursor: pointer;  }
+#menu { }
+#slider-panel { font-weight: 300; font-size: 13px; z-index: 300; padding: 10px; position: absolute; text-align: center; color: #222; bottom: 20px; left: 50%; margin-left: -120px; width: 250px; background: rgba(255,255,255,0.75); }
+.menu-item, .menu-item-selected { display: inline-block; cursor: pointer; margin-right: 12px; line-height: 24px; }
+.menu-item { font-weight: 300; color: #09e; cursor: pointer; }
+.menu-item:hover { color: #f00; }
+.maps-menu-item { line-height: 24px; }
+.menu-item-selected { cursor: pointer; color: #333; border-bottom: 3px solid #09e; }
+.menu-item-selected span { font-weight: 400;  }
+
+#progress { position: absolute; top: 0px; left: 0px; width: 100%; z-index: 1500; display: block; height: 12px;
+  opacity: 0.8;
+  background-image: -webkit-linear-gradient(left, #0099EE 0%, #B5E5FF 25%, #B5E5FF 50%, #B5E5FF 75%, #0099EE 100%);
+  animation: kaleidoscope 12s ease infinite;
+}
+
+@keyframes namedcolors {
+	100% {background-color: white;}
+}
+
+@-webkit-keyframes kaleidoscope {
+	0% 	{ background-position: 0 0; }
+	25% { background-position: 25em 0; }
+	50% { background-position: 50em 0; }
+	75% { background-position: 75em 0; }
+	100% { background-position: 99em 0; }
+}
+
+@media screen and (min-width: 1200px) {
+	#modes { font-size: 15px; }
+}
+
+
+@media screen and (max-width: 500px) {
+	#mobile-btn, #close-btn, #go-btn { display: block; }
+}
+
+
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 2px; /* Specified height */
+    background: rgba(255,255,255,0.8); /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 28px; /* Set a specific slider handle width */
+    height: 28px; /* Slider handle height */
+    border-radius: 30px;
+    border: 2px solid black;
+    cursor: pointer;
+    background: #fff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: opacity .15s; /* Safari */
+  transition: opacity .15s;
+
+}

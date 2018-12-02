@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Galton by Urbica</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src='https://npmcdn.com/@turf/turf@3.5.1/turf.min.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+
+    <link href='resources/galton.css' rel='stylesheet' />
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <div id='progress'></div>
+    <div id='stats'></div>
+    <div id='mobile-btn'>G</div>
+    <div id='location-btn'>
+        <div></div>
+    </div>
+    <div id='map'></div>
+
+    <div id='modes'>
+    </div>
+
+    <div id='slider-panel'>
+        <div class='slider-time' id='slider-value'>000</div>
+        <div><input class="slider" id="slider" type="range" min="5" max="60" step="5" value="20" /></div>
+    </div>
+    <script src="resources/app.js"></script>
+</body>
+
+</html>
