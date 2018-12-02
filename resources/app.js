@@ -68,6 +68,7 @@ var modesList = d3.select("#modes"),
   slider = d3.select("#slider").property("value", c.time)
     .on("input", () => {
     c.time = document.getElementById("slider").value;
+    setParam("time", c.time);
     sliderValue.text(c.time + " mins");
     getGalton(c.ll, c.mode, c.city, c.time)
   });
@@ -379,7 +380,7 @@ getGalton = (coords, mode, city, time) => {
     setParam("city", city);
   }
 
-  if (!mode) mode = "foot";
+//  if (!mode) mode = "foot";
 
   progress.style("display", "block");
   setParam("ll", coords);
