@@ -52,8 +52,8 @@ var modes = [
 ];
 
 //URL request params
-var galtonUrl = "https://galton.urbica.co/",
-    otpUrl = 'http://178.132.206.5/api/isochrones/';
+var galtonUrl = "//galton.urbica.io/",
+    otpUrl = '//178.132.206.5/api/isochrones/';
 
 //http://178.132.206.5/api/isochrones/?lng=37.6544718891561&lat=55.741775189814746&network=current&timeOfDay=morning&travelTime=15
 
